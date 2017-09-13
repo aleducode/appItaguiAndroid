@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <item
+        android:id="@+id/inicioItem"
+        android:icon="@drawable/inicio"
+        android:title="inicio" />
+
+    <item
+        android:id="@+id/buscarItem"
+        android:icon="@drawable/megafono"
+        android:title="Noticias Recientes" />
+
+    <item
+        android:id="@+id/camaraItem"
+        android:icon="@drawable/participacion"
+        android:title="Redes Sociales" />
+
+    <item
+        android:id="@+id/favoritosItem"
+        android:icon="@drawable/contactos"
+        android:title="Contáctenos" />
+
+    <item
+        android:id="@+id/perfilItem"
+        android:icon="@drawable/cascos"
+        android:title="Soporte" />
+
+</menu>
+

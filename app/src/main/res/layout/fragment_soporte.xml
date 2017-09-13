@@ -1,0 +1,92 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragments.Soporte"
+    android:orientation="vertical">
+
+    <!-- TODO: Update blank fragment layout -->
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:orientation="vertical">
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="Nombre: "
+           android:paddingTop="10dp"
+           android:textSize="20dp"
+           android:textStyle="bold"
+           android:textColor="@android:color/background_dark"/>
+       <EditText
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:minHeight="45dp"
+           android:id="@+id/nombre"
+           android:background="@drawable/bordeado"/>
+
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="Correo: "
+           android:paddingTop="10dp"
+           android:textSize="20dp"
+           android:textStyle="bold"
+           android:textColor="@android:color/background_dark"/>
+       <EditText
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:minHeight="45dp"
+           android:id="@+id/correo"
+           android:background="@drawable/bordeado"/>
+
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="Asunto: "
+           android:paddingTop="10dp"
+           android:textSize="20dp"
+           android:textStyle="bold"
+           android:textColor="@android:color/background_dark"/>
+       <EditText
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:minHeight="45dp"
+           android:id="@+id/asunto"
+           android:background="@drawable/bordeado"/>
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="Mensaje: "
+           android:paddingTop="10dp"
+           android:textSize="20dp"
+           android:textStyle="bold"
+           android:textColor="@android:color/background_dark"/>
+       <EditText
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+
+           android:minHeight="45dp"
+           android:id="@+id/mensaje"
+           android:background="@drawable/bordeado"
+          />
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:paddingTop="30dp"
+           >
+
+
+       <Button
+           android:layout_gravity="center"
+           android:gravity="center"
+           android:id="@+id/enviar"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:background="@drawable/bordeado"
+           android:backgroundTint="@color/colorPrimary"
+           android:text="Enviar"/>
+       </LinearLayout>
+
+   </LinearLayout>
+    </ScrollView>

@@ -1,0 +1,8 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="listaimgw">207sp</dimen>
+    <dimen name="listaimgh">127sp</dimen>
+    <dimen name="detalleimgw">361sp</dimen>
+    <dimen name="detalleimgh">221sp</dimen>
+</resources>
