@@ -6,10 +6,12 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.hitomi.cmlibrary.CircleMenu;
@@ -19,14 +21,6 @@ import app.alcaldiaitagui.R;
 
 
 public class MenuCircular extends Fragment {
-
-
-    String arrayName[]={"Facebook",
-            "Instagram",
-            "Twitter",
-            "YouTube",
-            "Pinterest"};
-
     private void gotoUrl(String url){Intent intent=new Intent();
         intent.setAction(Intent.ACTION_VIEW);
         intent.addCategory(Intent.CATEGORY_BROWSABLE);
@@ -34,57 +28,50 @@ public class MenuCircular extends Fragment {
         startActivity(intent);
 
     }
-
-
-
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view= inflater.inflate(R.layout.fragment_menu_circular, container, false);
+        View view = inflater.inflate(R.layout.fragment_menu_circular, container, false);
+        DisplayMetrics displaymetrics = new DisplayMetrics();
+        ImageView banner=(ImageView)view.findViewById(R.id.imageView);
+        getActivity().getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
+        int height = displaymetrics.heightPixels;
+        Double bannerheigth=(height/2)-height*0.25;
+        banner.getLayoutParams().height=bannerheigth.intValue();
 
+        ImageView fb=(ImageView)view.findViewById(R.id.fb);
+        fb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                gotoUrl("https://es-la.facebook.com/alcaldiaitagui/");
 
+            }
+        });
+        ImageView tw=(ImageView)view.findViewById(R.id.tw);
+        tw.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                gotoUrl("https://twitter.com/alcaldiaitagui?lang=es");
 
+            }
+        });
 
+        ImageView ig=(ImageView)view.findViewById(R.id.ig);
+        ig.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                gotoUrl("https://www.instagram.com/alcaldiadeitagui/?hl=es");
 
-        CircleMenu circleMenu = (CircleMenu) view.findViewById(R.id.circle_menu);
+            }
+        });
 
-        circleMenu.setMainMenu(Color.parseColor("#1972b5"),R.drawable.tocar,R.drawable.tocar)
-                .addSubMenu(Color.parseColor("#3b5998"),R.drawable.facebook)
-                .addSubMenu(Color.parseColor("#3f729b"),R.drawable.instagram)
-                .addSubMenu(Color.parseColor("#03a9f4"),R.drawable.twitter)
-                .addSubMenu(Color.parseColor("#ff0000"),R.drawable.youtube)
-                .addSubMenu(Color.parseColor("#cb2027"),R.drawable.pinterest)
-                .setOnMenuSelectedListener(new OnMenuSelectedListener() {
-                    @Override
-                    public void onMenuSelected(int index) {
-                        Toast.makeText(getContext(),"Selección:  " +arrayName[index],Toast.LENGTH_SHORT).show();
-                        switch (arrayName[index]){
-                            case "Facebook":
-                                gotoUrl("https://es-la.facebook.com/alcaldiaitagui/");
-                                break;
-                            case "Instagram":
-                                gotoUrl( "https://www.instagram.com/alcaldiadeitagui/?hl=es");
-                                break;
-                            case"Twitter":
-                                gotoUrl( "https://twitter.com/alcaldiaitagui?lang=es");
-                                break;
-                            case"YouTube":
-                                gotoUrl( "https://www.youtube.com/user/alcaldiaitagui1");
-                                break;
+        ImageView yt=(ImageView)view.findViewById(R.id.yt);
+        yt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                gotoUrl("https://www.youtube.com/user/alcaldiaitagui1");
 
-                            case "Pinterest":
-                                gotoUrl( "https://es.pinterest.com/alcaldiaitagui/");
-                                break;
-
-
-                            default: break;
-
-
-
-
-                        }
-                    }
-                });
+            }
+        });
         return view;
+
     }
-
-
 }

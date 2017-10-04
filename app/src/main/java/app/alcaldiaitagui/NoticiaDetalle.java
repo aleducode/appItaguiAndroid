@@ -1,5 +1,7 @@
 package app.alcaldiaitagui;
 
+import android.app.ActionBar;
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -46,70 +48,74 @@ public class NoticiaDetalle extends AppCompatActivity {
 
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_noticia_detalle);
 
+        // ACTION BAR modificacion//
+        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        getSupportActionBar().setCustomView(R.layout.toolbar_regreso);
+        TextView toolbar=(TextView)findViewById(R.id.mytext);
+        toolbar.setText("Noticias Municipio de Itagüí");
+        ImageView regresar=(ImageView)findViewById(R.id.regresar);
+        regresar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+        //------------------------//
+
+        // Tamaños variables de botones e imagenes //
         btnfb=(Button)findViewById(R.id.buttonfb);
         btntw=(Button)findViewById(R.id.buttontw);
         btnsitio=(Button)findViewById(R.id.buttonsitio);
         ivMovieIcon=(ImageView)findViewById(R.id.ivIcon);
-
         int config = getResources().getConfiguration().orientation;
-
         DisplayMetrics metrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(metrics);
         int width = metrics.widthPixels; // ancho absoluto en pixels
         int height = metrics.heightPixels; // alto absoluto en pixels
-
-
+        Double btnwidth=((width-width*0.05)/3);
         if(config==1) {
-            FrameLayout.LayoutParams param1 = new FrameLayout.LayoutParams(
+            FrameLayout.LayoutParams imgparams = new FrameLayout.LayoutParams(
                     width,
                     height / 2
             );
-            LinearLayout.LayoutParams paramfb = new LinearLayout.LayoutParams(
-                    width/3,
-                    height/11
-            );
-            LinearLayout.LayoutParams param = new LinearLayout.LayoutParams(
-                    width/3,
-                    height/13
+
+            LinearLayout.LayoutParams btnparams = new LinearLayout.LayoutParams(
+                    btnwidth.intValue(),
+                    height/14
             );
 
-            ivMovieIcon.setLayoutParams(param1); btnfb.setLayoutParams(paramfb);
-            btnsitio.setLayoutParams(paramfb);
-            btntw.setLayoutParams(param);
+            ivMovieIcon.setLayoutParams(imgparams);
+            btnfb.setLayoutParams(btnparams);
+            btnsitio.setLayoutParams(btnparams);
+            btntw.setLayoutParams(btnparams);
 
         }
         else{
-            FrameLayout.LayoutParams param1 = new FrameLayout.LayoutParams(
+            FrameLayout.LayoutParams imgparams = new FrameLayout.LayoutParams(
                     width,
                     height
             );
-            LinearLayout.LayoutParams paramfb = new LinearLayout.LayoutParams(
-                    width/3,
-                    height/7
-            );
-            LinearLayout.LayoutParams param = new LinearLayout.LayoutParams(
-                    width/3,
-                    height/9
+
+            LinearLayout.LayoutParams btnparams = new LinearLayout.LayoutParams(
+                    btnwidth.intValue(),
+                    height/8
             );
 
-            ivMovieIcon.setLayoutParams(param1);
-            btnfb.setLayoutParams(paramfb);
-            btnsitio.setLayoutParams(paramfb);
-            btntw.setLayoutParams(param);
+            ivMovieIcon.setLayoutParams(imgparams);
+            btnfb.setLayoutParams(btnparams);
+            btnsitio.setLayoutParams(btnparams);
+            btntw.setLayoutParams(btnparams);
 
         }
 
-
-
-
+        // Recepción de información desde lista noticias//
         setUpUIViews();
-
-
         Bundle bundle = getIntent().getExtras(); //Recepcion de la información enviada desde MainActivityNoticias por Bundle
         if(bundle != null){
             String json = bundle.getString("noticiaModel"); // Lectura
@@ -157,7 +163,7 @@ public class NoticiaDetalle extends AppCompatActivity {
                         intent.setPackage("com.twitter.android");
                         startActivity(intent);
 
-                } catch (android.content.ActivityNotFoundException ex) {
+                } catch (ActivityNotFoundException ex) {
                     Toast.makeText(getApplicationContext(),
                             "No tiene Instalado Twitter en su dispositivo", Toast.LENGTH_SHORT).show();
                 }
@@ -184,7 +190,7 @@ public class NoticiaDetalle extends AppCompatActivity {
                         intent.putExtra(Intent.EXTRA_TEXT, urlnoticia);
                         intent.setPackage("com.facebook.katana");
                         startActivity(intent);
-                    } catch (android.content.ActivityNotFoundException ex) {
+                    } catch (ActivityNotFoundException ex) {
                         Toast.makeText(getApplicationContext(),
                                 "No tiene instalado Facebook en su dispositivo", Toast.LENGTH_SHORT).show();
                     }

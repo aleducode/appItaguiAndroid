@@ -3,9 +3,5 @@
     xmlns:tools="http://schemas.android.com/tools"
 
     tools:context=".NoticiaDetalle">
-    <item
-        android:id="@+id/regresar"
-        android:orderInCategory="1"
-        android:title="Regresar"
-        app:showAsAction="always" />
+
 </menu>

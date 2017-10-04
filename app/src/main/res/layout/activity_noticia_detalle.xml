@@ -11,14 +11,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@android:color/background_light"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="10dp">
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@android:color/background_light"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/tvTitulo"
@@ -30,6 +31,30 @@
                 android:text="MovieName"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@android:color/background_dark" />
+
+
+
+
+            <TextView
+                android:id="@+id/tvFechaPublicacion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Fecha de publicación"
+                android:textColor="?attr/colorButtonNormal"
+                android:textSize="10dp" />
+
+            <TextView
+                android:id="@+id/tvFecha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Year"
+                android:textColor="?attr/colorButtonNormal"
+                android:textSize="10dp" />
+
+
+
         </LinearLayout>
 
         <LinearLayout
@@ -41,14 +66,15 @@
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_gravity="center">
+                android:layout_gravity="center"
+                >
 
                 <ImageView
                     android:id="@+id/ivIcon"
                     android:layout_width="@dimen/detalleimgw"
                     android:layout_height="@dimen/detalleimgh"
                     android:layout_gravity="center"
-                    android:src="@drawable/fax" />
+                    android:src="@drawable/splash_img" />
 
                 <ProgressBar
                     android:id="@+id/progressBar"
@@ -62,83 +88,56 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="vertical">
-
-
-            <TextView
-                android:id="@+id/tvFechaPublicacion"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Fecha de publicación"
-                android:gravity="center"
-                android:textColor="?attr/colorButtonNormal"
-                android:textSize="10dp" />
-
-            <TextView
-                android:id="@+id/tvFecha"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="Year"
-                android:textColor="?attr/colorButtonNormal"
-                android:textSize="10dp" />
-
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
 
             <TextView
                 android:id="@+id/tvStory"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="right|left"
-
+                android:gravity="left"
                 android:text="Story"
                 android:textColor="@android:color/background_dark" />
-        </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal" >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:gravity="center">
-
-            <Button
-                android:id="@+id/buttonfb"
-                android:layout_width="110px"
-                android:layout_height="70px"
-                android:background="@drawable/compartirfb"
-                />
+                <Button
+                    android:id="@+id/buttonfb"
+                    android:layout_width="110px"
+                    android:layout_height="70px"
+                    android:background="@drawable/compartir"
+                    />
 
 
 
-            <Button
-                android:id="@+id/buttontw"
+                <Button
+                    android:id="@+id/buttontw"
 
-                android:layout_toRightOf="@+id/buttonfb"
-                android:background="@drawable/twittercom"
-                android:layout_width="110px"
-                android:layout_height="70px"
-                android:text="" />
+                    android:layout_toRightOf="@+id/buttonfb"
+                    android:background="@drawable/twittear"
+                    android:layout_width="110px"
+                    android:layout_height="70px"
+                    android:text="" />
 
-            <Button
-                android:id="@+id/buttonsitio"
+                <Button
+                    android:id="@+id/buttonsitio"
 
-                android:layout_toRightOf="@+id/buttontw"
-                android:background="@drawable/sitio"
-                android:layout_width="0px"
-                android:layout_height="0px"
-                android:text="" />
+                    android:layout_toRightOf="@+id/buttontw"
+                    android:background="@drawable/iralsitio"
+                    android:layout_width="0px"
+                    android:layout_height="0px"
+                    android:text="" />
 
 
 
 
-</LinearLayout>
+            </LinearLayout>
 
         </LinearLayout>
+
     </LinearLayout>
 </ScrollView>
 

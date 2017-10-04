@@ -3,8 +3,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
+    android:orientation="vertical"
     tools:context="app.alcaldiaitagui.Fragments.ListaNoticias">
+   <android.support.v7.widget.Toolbar
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:background="@color/colorPrimary">
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text="Noticias Municipio de Itagüí"
+           android:textSize="20dp"
+           android:textStyle="bold"
+           android:gravity="center"
+           android:textColor="@android:color/background_light"/>
+
+   </android.support.v7.widget.Toolbar>
 
     <ListView
         android:id="@+id/lvNoticias"

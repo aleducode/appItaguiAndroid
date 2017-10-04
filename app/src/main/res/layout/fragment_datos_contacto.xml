@@ -1,170 +1,152 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="@android:color/background_light"
+
     tools:context="app.alcaldiaitagui.Fragments.DatosContacto">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/banner2" />
+
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginTop="0dp"
+        android:background="@color/color_fondo"
         android:orientation="vertical"
-       >
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:id="@+id/layoutAlcaldia"
-            android:background="?android:attr/selectableItemBackground"
-            tools:ignore="UseCompoundDrawables,UselessParent">
-
-            <ImageView
-                android:id="@+id/imageView1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/ubicacion"
-                android:contentDescription="" />
-
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:orientation="vertical">
             <TextView
-                android:id="@+id/textView1"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center_vertical"
-                android:text="Alcaldía de Itagüí  Antioquia - Colombia "
-                android:textColor="@android:color/background_dark" />
+                android:layout_height="wrap_content"
+                android:text="Alcaldía de Itagüí"
+                android:gravity="center_horizontal"
+                android:textColor="@android:color/background_dark"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:paddingBottom="3dp"/>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    >
+                    <LinearLayout
+                        android:id="@+id/layoutmapa"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/borde1"
+                        android:layout_gravity="center"
+                        >
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:gravity="left"
+
+                            android:src="@drawable/mapa"/>
+                        <TextView
+                            android:id="@+id/ubicacion"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="Centro Administrativo Municipal de Itagüí -CAMI- Carrera 51 No 51-55 Itagüí - Colombia"
+                            android:textColor="@android:color/background_dark"
+                            android:textSize="14dp"
+                            android:gravity="left|center_vertical"
+                            />
+                    </LinearLayout>
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/borde1"
+                        >
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_gravity="left"
+                            android:src="@drawable/correo"/>
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="Codigo Postal: 055412"
+                            android:textColor="@android:color/background_dark"
+                            android:textSize="14dp"
+                            android:gravity="left|center_vertical" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/layoutcorreo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/borde1"
+
+                        >
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_gravity="left"
+                            android:src="@drawable/email"/>
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="contactenos@itagui.gov.co"
+                            android:textColor="@android:color/background_dark"
+                            android:textSize="14dp"
+                            android:gravity="left|center_vertical"
+                     />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/layouttelefono"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/borde1"
+
+                        >
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_gravity="left"
+                            android:src="@drawable/telefono"/>
+                        <TextView
+                            android:id="@+id/telefonos"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="contactenos@itagui.gov.co"
+                            android:textColor="@android:color/background_dark"
+                            android:textSize="14dp"
+                            android:gravity="left|center_vertical"
+                           />
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
 
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:id="@+id/LyUbicacion1"
-            android:background="?android:attr/selectableItemBackground"
-            tools:ignore="UseCompoundDrawables,UselessParent">
-
-            <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/direcccion"
-                android:contentDescription="" />
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center_vertical"
-                android:text="Centro Administrativo Municipal de Itagüí, Carrera 51 51-55 Itagüí Antioquia - Colombia "
-                android:textColor="@android:color/background_dark" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:id="@+id/layoutAlcaldia2"
-            android:background="?android:attr/selectableItemBackground"
-            tools:ignore="UseCompoundDrawables,UselessParent">
-
-            <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/codigopostal"
-                android:contentDescription="" />
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center_vertical"
-                android:text="Código Postal: 055412"
-                android:textColor="@android:color/background_dark" />
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:id="@+id/LyCorreo"
-            android:background="?android:attr/selectableItemBackground"
-            tools:ignore="UseCompoundDrawables,UselessParent">
-
-            <ImageView
-                android:id="@+id/imageView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/email"
-                android:contentDescription="" />
-
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center_vertical"
-                android:text="Email: contactenos@itagui.gov.co"
-                android:textColor="@android:color/background_dark" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:id="@+id/LyLlamar1"
-            android:background="?android:attr/selectableItemBackground"
-            tools:ignore="UseCompoundDrawables,UselessParent">
-
-            <ImageView
-                android:id="@+id/imageView33"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/tel"
-                android:contentDescription="" />
-
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center_vertical"
-                android:text="Línea Nacional: 01 8000 518 225"
-                android:textColor="@android:color/background_dark" />
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:id="@+id/LyLlamar2"
-            android:background="?android:attr/selectableItemBackground"
-            tools:ignore="UseCompoundDrawables,UselessParent">
-
-            <ImageView
-                android:id="@+id/imageView6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/fax"
-                android:contentDescription="" />
-
-            <TextView
-                android:id="@+id/textView6"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center_vertical"
-                android:text="Línea Local: 034737676"
-                android:textColor="@android:color/background_dark" />
-
-        </LinearLayout>
-
-
 
     </LinearLayout>
-
-
-</ScrollView>
+</android.support.constraint.ConstraintLayout>
 

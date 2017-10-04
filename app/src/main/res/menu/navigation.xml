@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-
-
-    android:layout_height="match_parent"
-    android:layout_width="match_parent">
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+
         android:id="@+id/inicioItem"
         android:icon="@drawable/inicio"
         android:title="inicio" />
@@ -15,7 +10,7 @@
     <item
         android:id="@+id/buscarItem"
         android:icon="@drawable/megafono"
-        android:title="Noticias Recientes" />
+        android:title="Noticias" />
 
     <item
         android:id="@+id/camaraItem"
@@ -25,12 +20,12 @@
     <item
         android:id="@+id/favoritosItem"
         android:icon="@drawable/contactos"
-        android:title="Contáctenos" />
+        android:title="Contacto" />
 
     <item
         android:id="@+id/perfilItem"
         android:icon="@drawable/cascos"
         android:title="Soporte" />
 
-</menu>
 
+</menu>

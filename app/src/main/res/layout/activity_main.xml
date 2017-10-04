@@ -19,15 +19,18 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
 
-            android:layout_above="@+id/bottomNavigationView" />
+            android:layout_above="@+id/navigation" />
 
         <android.support.design.widget.BottomNavigationView
-            android:id="@+id/bottomNavigationView"
+            android:id="@+id/navigation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             app:layout_scrollFlags="scroll|enterAlways|snap"
-            app:menu="@layout/menu_navigation" />
+            app:menu="@menu/navigation"
+            design:itemTextColor="@color/cardview_light_background"
+            design:itemIconTint="@color/cardview_light_background"
+            />
 
     </RelativeLayout>
 

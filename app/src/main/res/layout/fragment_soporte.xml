@@ -1,92 +1,119 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.Soporte"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@android:color/background_light"
+    android:focusableInTouchMode="true"
+    tools:context="app.alcaldiaitagui.Fragments.DatosContacto"
+    android:id="@+id/fragmentSoporte"
+    >
 
-    <!-- TODO: Update blank fragment layout -->
-   <LinearLayout
-       android:layout_width="match_parent"
-       android:layout_height="match_parent"
-       android:orientation="vertical">
-       <TextView
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:text="Nombre: "
-           android:paddingTop="10dp"
-           android:textSize="20dp"
-           android:textStyle="bold"
-           android:textColor="@android:color/background_dark"/>
-       <EditText
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:minHeight="45dp"
-           android:id="@+id/nombre"
-           android:background="@drawable/bordeado"/>
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/banner2" />
 
-       <TextView
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:text="Correo: "
-           android:paddingTop="10dp"
-           android:textSize="20dp"
-           android:textStyle="bold"
-           android:textColor="@android:color/background_dark"/>
-       <EditText
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:minHeight="45dp"
-           android:id="@+id/correo"
-           android:background="@drawable/bordeado"/>
+    <LinearLayout
 
-       <TextView
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:text="Asunto: "
-           android:paddingTop="10dp"
-           android:textSize="20dp"
-           android:textStyle="bold"
-           android:textColor="@android:color/background_dark"/>
-       <EditText
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:minHeight="45dp"
-           android:id="@+id/asunto"
-           android:background="@drawable/bordeado"/>
-       <TextView
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:text="Mensaje: "
-           android:paddingTop="10dp"
-           android:textSize="20dp"
-           android:textStyle="bold"
-           android:textColor="@android:color/background_dark"/>
-       <EditText
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginTop="0dp"
+        android:background="@color/color_fondo"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.0">
 
-           android:minHeight="45dp"
-           android:id="@+id/mensaje"
-           android:background="@drawable/bordeado"
-          />
-       <LinearLayout
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:paddingTop="30dp"
-           >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Formulario de Soporte"
+                android:gravity="center_horizontal"
+                android:textColor="@android:color/background_dark"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:paddingBottom="3dp"/>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/linearLayout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:orientation="vertical">
 
 
-       <Button
-           android:layout_gravity="center"
-           android:gravity="center"
-           android:id="@+id/enviar"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:background="@drawable/bordeado"
-           android:backgroundTint="@color/colorPrimary"
-           android:text="Enviar"/>
-       </LinearLayout>
+                    <EditText
+                        android:fontFamily="sans-serif"
+                        android:id="@+id/nombre"
+                        style="@style/editText_style"
+                        android:inputType="textEmailAddress"
+                        android:hint="Nombre"
+                        android:layout_gravity="center"/>
 
-   </LinearLayout>
-    </ScrollView>
+
+                    <EditText
+                        android:fontFamily="sans-serif"
+                        android:id="@+id/correo"
+                        style="@style/editText_style"
+                        android:inputType="textEmailAddress"
+                        android:hint="correo"
+                        android:layout_gravity="center"/>
+
+                    <EditText
+                        android:fontFamily="sans-serif"
+                        android:id="@+id/asunto"
+                        style="@style/editText_style"
+
+                        android:hint="Asunto"
+                        android:layout_gravity="center"/>
+                    <EditText
+                        android:fontFamily="sans-serif"
+                        android:id="@+id/telefono"
+                        style="@style/editText_style"
+                        android:inputType="number"
+                        android:hint="Teléfono"
+                        android:layout_gravity="center"/>
+                    <EditText
+                        android:fontFamily="sans-serif"
+                        android:id="@+id/mensaje"
+                        style="@style/editText_style"
+                        android:inputType="textLongMessage"
+                        android:hint="Mensaje"
+                        android:layout_gravity="center"/>
+                    <Button
+                        android:id="@+id/ingresar"
+                        style="@style/button_style"
+                        android:text="Enviar"
+                        android:textAllCaps="false"/>
+
+
+
+
+
+                </LinearLayout>
+
+            </ScrollView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

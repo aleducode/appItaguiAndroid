@@ -1,5 +1,6 @@
 package app.alcaldiaitagui.Fragments;
 
+import android.app.ActionBar;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -8,6 +9,8 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.graphics.drawable.DrawableCompat;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
 import android.view.*;
 import android.widget.AdapterView;
@@ -52,7 +55,6 @@ public class ListaNoticias extends Fragment {
 
 
 
-
     private final String URL_TO_HIT = "http://itagui.gov.co/app/consumir_noticias.php"; //define la url que contiene datos
 
     private ListView lvNoticias;  //define variables para mostrar la información
@@ -60,9 +62,6 @@ public class ListaNoticias extends Fragment {
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view= inflater.inflate(R.layout.fragment_lista_noticias, container, false);
-
-
-
 
 
 
@@ -221,26 +220,27 @@ public class ListaNoticias extends Fragment {
 
             final ProgressBar progressBar = (ProgressBar)convertView.findViewById(R.id.progressBar);
             final ImageView a = (ImageView) convertView.findViewById(R.id.ivIcon);
+            final TextView titulo=(TextView) convertView.findViewById(R.id.tvTitulo);
             DisplayMetrics displaymetrics = new DisplayMetrics();
-
+            int config = getResources().getConfiguration().orientation;
             getActivity().getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
             int height = displaymetrics.heightPixels;
             int width = displaymetrics.widthPixels;
-            int config = getResources().getConfiguration().orientation;
-            if(config==1){
-            FrameLayout.LayoutParams paramImg = new FrameLayout.LayoutParams(
-                    width/2,
-                    height/5
+            if(config==1) {
+            FrameLayout.LayoutParams param1 = new FrameLayout.LayoutParams(
+                    width/3,
+                    height/7
             );
-            a.setLayoutParams(paramImg);}
-            else{
-                FrameLayout.LayoutParams paramImg = new FrameLayout.LayoutParams(
-                        width/2,
-                        height/2
-                );
-                a.setLayoutParams(paramImg);
+            a.setLayoutParams(param1);}
+            else{FrameLayout.LayoutParams param1 = new FrameLayout.LayoutParams(
+                    width/3,
+                    height/3
+            );
+                a.setLayoutParams(param1);
 
             }
+
+
 
             // carga de imagen
             final ViewHolder finalHolder = holder;

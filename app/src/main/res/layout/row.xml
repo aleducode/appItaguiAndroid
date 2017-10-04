@@ -1,46 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
-    android:background="@drawable/borde"
-    android:backgroundTint="@color/cardview_light_background"
-    android:orientation="vertical">
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    >
     <LinearLayout
+        android:paddingTop="10dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingBottom="20px">
-
-        <TextView
-            android:id="@+id/tvTitulo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            android:layout_weight="1"
-            android:gravity="left"
-            android:text="NoticiaName"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@android:color/background_dark"
-            android:textStyle="bold" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-       >
-
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
         <FrameLayout
+            android:id="@+id/framelayout1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical">
+        <ImageView
+            android:gravity="center_vertical"
+            android:id="@+id/ivIcon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            >
-
-            <ImageView
-                android:id="@+id/ivIcon"
-                android:layout_width="@dimen/listaimgw"
-                android:layout_height="@dimen/listaimgh"
-                />
+            android:src="@drawable/splash_img"/>
 
             <ProgressBar
                 android:id="@+id/progressBar"
@@ -48,36 +29,34 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center" />
         </FrameLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center_vertical"
-    android:gravity="center_horizontal"
-    android:orientation="vertical">
+            >
             <TextView
-
-                android:id="@+id/tvFechaPublicacion"
+                android:gravity="center"
+                android:id="@+id/tvFecha"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:text="Fecha de Publicación:"
-
+                android:text="Year"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="?attr/colorButtonNormal" />
+            <TextView
+                android:id="@+id/tvTitulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="NoticiaName"
+                android:textSize="17dp"
+                android:textColor="@android:color/background_dark"
+                android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/tvFecha"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
 
-            android:text="Year"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textColor="?attr/colorButtonNormal" />
-
-</LinearLayout>
+        </LinearLayout>
     </LinearLayout>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -87,20 +66,21 @@
             android:id="@+id/tvResumen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             android:text="resumen"
+            android:textSize="13dp"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@android:color/background_dark"
-            android:textSize="17dp" />
+            />
 
         <TextView
             android:id="@+id/tvStory"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Leer más [+]"
             android:textColor="?attr/actionModeSplitBackground"
             android:textColorHighlight="@color/colorPrimary"
-            android:textSize="20dp" />
+            android:textSize="13dp" />
 
     </LinearLayout>
+
 </LinearLayout>
