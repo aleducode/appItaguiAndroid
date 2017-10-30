@@ -176,7 +176,7 @@ public class ListaNoticias extends Fragment {
                     }
                 });
             } else {
-                Toast.makeText(getContext(), "Error de Servidor", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Error de Conexión a red", Toast.LENGTH_SHORT).show();
             }
         }  //método para redirigir a la clase DetailAvctivity cuando se haga click en el item del listview
     }
