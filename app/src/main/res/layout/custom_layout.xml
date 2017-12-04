@@ -22,7 +22,7 @@
         android:id="@+id/icons"
         android:layout_width="83dp"
         android:layout_height="83dp"
-        android:src="@drawable/movilidad"
+        android:src="@drawable/cargando"
         android:layout_gravity="center_vertical|center_horizontal"
       />
 

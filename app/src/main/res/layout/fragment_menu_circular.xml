@@ -62,11 +62,13 @@
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
                         android:src="@drawable/fb"/>
+
                     <ImageView
                         android:id="@+id/tw"
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
-                        android:src="@drawable/tw"/>
+                        android:src="@drawable/tw" />
+
                     <ImageView
                         android:id="@+id/ig"
                         android:layout_width="match_parent"
