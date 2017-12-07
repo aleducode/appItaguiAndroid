@@ -1,39 +1,21 @@
 package app.alcaldiaitagui.Fragments;
 
-import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.FrameLayout;
 import android.widget.GridView;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.Toast;
-
-import com.google.gson.Gson;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import ServicioWebMenu.Downloader;
-import app.alcaldiaitagui.Concurso;
-import app.alcaldiaitagui.GridAdapter;
-import app.alcaldiaitagui.MainActivity;
-import app.alcaldiaitagui.NoticiaDetalle;
 import app.alcaldiaitagui.R;
-
-import static app.alcaldiaitagui.R.id.icons;
 
 
 public class Menu extends Fragment implements NavigationView.OnNavigationItemSelectedListener {

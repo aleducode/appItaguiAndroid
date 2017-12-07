@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "873937266177",
+    "firebase_url": "https://androidalcaldiaitagui.firebaseio.com",
+    "project_id": "androidalcaldiaitagui",
+    "storage_bucket": "androidalcaldiaitagui.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:873937266177:android:18578f2ecabf3aee",
+        "android_client_info": {
+          "package_name": "app.alcaldiaitagui"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "873937266177-rr782314fu6kdmf735108k35cu6mncvn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIlbM3pa90KBfSlHqV7iVi7ahxW1ejkuE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -17,6 +17,10 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.messaging.FirebaseMessaging;
+import com.google.firebase.messaging.FirebaseMessagingService;
+
 import java.lang.reflect.Field;
 
 import app.alcaldiaitagui.Fragments.DatosContacto;
@@ -38,6 +42,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        FirebaseMessaging.getInstance().subscribeToTopic("test");
+        FirebaseInstanceId.getInstance().getToken();
+        String token= FirebaseInstanceId.getInstance().getToken();
+        Log.i("token","" + token);
 
         getSupportActionBar().hide();
 
